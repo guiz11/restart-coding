@@ -1,52 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>My First Page</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-  <!-- HEADER -->
-  <header>
-    <h1>Guillaume’s Page</h1>
-    <nav>
-      <a href="#about">About</a> |
-      <a href="#interests">Interests</a> |
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+    <head>
+        <meta charset="UTF-8">
+        <title>Home</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    
+    <body>
+    
+        <!-- HEADER -->
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <button id="themeToggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+            </nav>
+        </header>
 
-  <!-- MAIN CONTENT -->
-  <main>
-    <section id="about">
-      <h2>About Me</h2>
-      <p>My name is Guillaume. I live in Calgary, Canada. I used to do design and now I’m learning coding again.</p>
-    </section>
 
-    <section id="interests">
-      <h2>My Interests</h2>
-      <ul>
-        <li>Travel ✈️</li>
-        <li>Design 🎨</li>
-        <li>Coding 💻</li>
-      </ul>
-    </section>
+        <!-- MAIN CONTENT -->
+        <main>
 
-    <section id="contact">
-      <h2>Find Me Online</h2>
-      <a href="https://github.com/guiz11" target="_blank">My GitHub</a>
-    </section>
+            <h1>Welcome to Guillaume’s Portfolio</h1>
+            <p>This site is my journey back into coding — follow along!</p>
 
-    <section>
-      <h2>Random Picture</h2>
-      <img src="https://picsum.photos/200" alt="Random image">
-    </section>
-  </main>
+            <section id="about">
+                <h2>About Me</h2>
+                <p>My name is Guillaume. I live in Calgary, Canada. I used to do design and now I’m learning coding again.</p>
+            </section>
 
-  <!-- FOOTER -->
-  <footer>
-    <p>Made with ❤️ by Guillaume — 2025</p>
-  </footer>
-</body>
+            <section id="interests">
+                <h2>My Interests</h2>
+                    <ul>
+                        <li>Travel ✈️</li>
+                        <li>Design 🎨</li>
+                        <li>Coding 💻</li>
+                    </ul>
+            </section>
+
+            <section>
+                <h2>My Journey</h2>
+                <p>I started as a graphic designer and fell in love with web design...</p>
+
+                <div id="moreText" style="display: none;">
+                    <p>After moving to Canada, I took a break from coding. 
+                    Now, I’m rebuilding my skills step by step, 
+                    and I want to combine my design background with development.</p>
+                </div>
+
+                <button onclick="toggleReadMore()">Read More</button>
+            </section>
+
+            <section>
+                <h2>Photo Gallery</h2>
+                <img id="galleryImage" src="https://picsum.photos/400/200?random=1" alt="Gallery">
+                <br>
+                <button onclick="prevImage()">⬅️ Prev</button>
+                <button onclick="nextImage()">➡️ Next</button>
+            </section>
+
+            <section id="contact">
+                <h2>Find Me Online</h2>
+                <a href="https://github.com/guiz11" target="_blank">My GitHub</a>
+            </section>
+
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message"></textarea>
+                
+                <button type="submit">Send</button>
+            </form>
+
+            <section>
+                <h2>Random Picture</h2>
+                <img src="/images/Pictures/guiz.jpg" id="guiz" loading="lazy" alt="guiz">
+            </section>
+
+            <section>
+                <h2>Quote of the Day</h2>
+                <p id="quote">Click the button to get a quote!</p>
+                <button onclick="newQuote()">New Quote</button>
+            </section>
+
+            <section>
+                <h2>FAQ</h2>
+                <div class="faq-item">
+                    <h3 onclick="toggleFAQ(this)">What am I learning?</h3>
+                    <p class="faq-answer">I’m learning HTML, CSS, and JavaScript step by step.</p>
+                </div>
+
+                <div class="faq-item">
+                    <h3 onclick="toggleFAQ(this)">Why build this site?</h3>
+                    <p class="faq-answer">It helps me practice coding while creating something real.</p>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- FOOTER -->
+        <footer>
+            <p>Made with ❤️ by Guillaume — <span id="year"></span></p>
+        </footer>
+
+    </body>
+
+    <script src="script.js"></script>
 
 </html>
